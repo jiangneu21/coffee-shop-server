@@ -11,10 +11,10 @@ const productSchema = mongoose.Schema({
                                               required: true,
                                               ref: 'User'
                                           },
-                                          name: {
-                                              type: String,
-                                              required: true,
-                                          },
+                                        //   name: {
+                                        //       type: String,
+                                        //       required: true,
+                                        //   },
                                           image: {
                                               type: String,
                                               required: true,
@@ -28,6 +28,14 @@ const productSchema = mongoose.Schema({
                                               required: true,
                                               default: 3.99
                                           },
+                                          description: {
+                                                type: String,
+                                                required: false,
+                                          },
+                                          ingredients: {
+                                                type: Array,
+                                                required: false,
+                                            },
                                           reviews: [reviewSchema],
 
                                       }, {timestamps: true})
