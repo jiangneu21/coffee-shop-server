@@ -32,7 +32,14 @@ const getProducts = asyncHandler(async (req, res) => {
     //     console.error(error);
     //     res.status(500).json({ error: 'Server Error' });
     // }
-    const products = await ProductModel.find({});
+    const keyword = req.query.keyword ? {
+        title: {
+            $regex: req.query.keyword,
+            $options: 'i',
+        },
+    } : {}
+
+    const products = await ProductModel.find({...keyword});
     res.json(products);
 
 })

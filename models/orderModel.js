@@ -33,10 +33,7 @@ const orderSchema = mongoose.Schema({
 
                                             }
                                         ],
-                                        paymentMethod: {
-                                            type: String,
-                                            required: false
-                                        },
+          
                                         paymentResult: {
                                             id: {
                                                 type: String
